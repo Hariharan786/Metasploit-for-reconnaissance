@@ -25,20 +25,27 @@ Open terminal and try execute some kali linux commands
 Find out the ip address of the attackers system
 ## OUTPUT:
 
+![Attacker IP Address](images/01_ifconfig.jpg)
+
 
 Invoke msfconsole:
 ## OUTPUT:
 
 
 Type help or a question mark "?" to see the list of all available commands you can use inside msfconsole.
+## OUTPUT:
 
-
+![msfconsole Help](images/02_msfconsole_help.jpg)
 
 
 Port Scanning:
 Following command is executed for scanning the systems on our local area network with a TCP scan (-sT) looking for open ports between 1 and 1000 (-p1-1000).
 msf >  nmap -sT 192.168.1810/24 -p1-1000  (Replace with appropriate IP Address)
 ## OUTPUT:
+
+![Nmap Port Scan Started](images/03_nmap_scan_start.jpg)
+
+![Nmap Port Scan Completed](images/04_nmap_scan_done.jpg)
 
 step4:
 use the db-nmap command to scan and save the results into Metasploit's postgresql attached database. In that way, you can use those results in the exploitation stage later.
@@ -47,6 +54,9 @@ scan the targets with the command db_nmap as follows.
 msf > db_nmap 192.168.181.0/24
 ## OUTPUT:
 
+![db_nmap Scan Progress](images/05_db_nmap_progress.jpg)
+
+![db_nmap Scan Completed](images/06_db_nmap_done.jpg)
 
 
 Metasploit has a multitude of scanning modules built in. If we open another terminal, we can navigate to Metasploit's auxiliary modules and list all the scanner modules.
@@ -54,12 +64,14 @@ cd /usr/share /metasploit-framework/modules/auxiliary
 kali > ls -l
 ## OUTPUT:
 
+![Auxiliary Modules Directory](images/07_auxiliary_modules.jpg)
 
 
 Search is a powerful command in Metasploit that you can use to find what you want to locate. 
 msf >search name:Microsoft type:exploit
 ## OUTPUT:
 
+![Search Microsoft Exploits](images/08_search_microsoft.jpg)
 
 
 The info command provides information regarding a module or platform,
@@ -68,6 +80,8 @@ Before beginning, set up the Metasploit database by starting the PostgreSQL serv
 systemctl start postgresql
 msfdb init
 ## OUTPUT:
+
+![PostgreSQL and msfdb init](images/09_msfdb_init.jpg)
 
 
 
